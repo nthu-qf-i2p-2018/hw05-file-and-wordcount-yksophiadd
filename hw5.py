@@ -25,7 +25,7 @@ def main(filename):
             # "dream." => "dream"
             word = words.strip('.')
             # check if word is not empty
-            if word:
+            if word !=("" ""):
                 # append the word to "all_words" list
                 all_words.append(word)
 
