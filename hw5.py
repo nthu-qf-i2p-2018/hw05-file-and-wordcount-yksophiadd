@@ -17,13 +17,14 @@ def main(filename):
     for line in lines:
         # split a line of text into a list words
         # "I have a dream." => ["I", "have", "a", "dream."]
+        line = line.strip()
         words = line.split()
 
         # check the format of words and append it to "all_words" list
         for word in words:
             # then, remove (strip) unwanted punctuations from every word
             # "dream." => "dream"
-            word = words.strip('.')
+            word = words.strip(string.punctuation)
             # check if word is not empty
             if word !=("" ""):
                 # append the word to "all_words" list
