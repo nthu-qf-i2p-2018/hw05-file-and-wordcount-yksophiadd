@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import csv
 import json
 import pickle
@@ -24,7 +23,7 @@ def main(filename):
         for word in words:
             # then, remove (strip) unwanted punctuations from every word
             # "dream." => "dream"
-            word = words.strip(string.punctuation)
+            word = word.strip(string.punctuation)
             # check if word is not empty
             if word !=("" ""):
                 # append the word to "all_words" list
@@ -35,11 +34,6 @@ def main(filename):
     counter = Counter()
     counter.update(all_words)
 
-    # dump to a csv file named "wordcount.csv":
-    # word,count
-    # a,12345
-    # I,23456
-    # ...
     with open("wordcount.csv", "w" ) as csv_file:
         # create a csv writer from a file object (or descriptor)
         writer = csv.writer(csv_file, delimiter=',')
@@ -56,7 +50,7 @@ def main(filename):
     # BONUS: dump to a pickle file named "wordcount.pkl"
     # hint: dump the Counter object directly
     with open("wordcount.pkl", "wb" ) as pkl_file:
-        pkl.dump(counter, pkl_file)
+        pickle.dump(counter, pkl_file)
 
 
 if __name__ == '__main__':
